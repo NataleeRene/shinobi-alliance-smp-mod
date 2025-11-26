@@ -1,0 +1,1 @@
+Project documentation placeholder. Move existing DOCUMENTATION.md content here if desired.

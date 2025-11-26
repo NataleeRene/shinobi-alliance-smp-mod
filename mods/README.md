@@ -1,0 +1,1 @@
+Place built mod JARs in this folder, e.g., ShinobiAlliance-1.0.0.jar.
