@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "shinobialliancemod",
+  "version": "1.0.0",
+
+  "name": "Shinobi Alliance Mod",
+  "description": "A mod for the Shinobi Alliance SMP.",
+  "authors": ["Natalee"],
+
+  "contact": {
+    "sources": "https://github.com/yourusername/shinobialliancemod"
+  },
+
+  "license": "MIT",
+  "environment": "*",
+
+  "entrypoints": {
+    "main": [
+      "com.shinobi.shinobialliancemod.ShinobiAllianceMod"
+    ],
+    "client": [
+      "com.shinobi.shinobialliancemod.client.ShinobiAllianceModClient"
+    ]
+  },
+
+  "depends": {
+    "minecraft": "1.21.10",
+    "fabricloader": ">=0.15.0",
+    "fabric": "*"
+  }
+}
