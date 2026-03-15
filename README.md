@@ -2,7 +2,9 @@
 
 A full-featured competitive progression mod built for Fabric servers, designed to power structured SMP gameplay with advancement-based ranking, village factions, war events, and real-time player tracking.
 
-Supports **Minecraft 1.21.10 (Fabric)**.
+Supports **Minecraft 1.21.11 (Fabric)**.
+
+Current mod version: **1.0.1**.
 
 ---
 
@@ -11,6 +13,15 @@ Supports **Minecraft 1.21.10 (Fabric)**.
 Modrinth: https://modrinth.com/mod/shinobi-alliance  
 
 GitHub Releases: (coming soon)
+
+---
+
+## 📝 Update Notes (1.0.1)
+
+- Updated Minecraft compatibility from **1.21.10** to **1.21.11**.
+- Updated Fabric and integration dependencies for 1.21.11 compatibility.
+- Applied minimal mapping/API compatibility fixes required for compilation.
+- No gameplay, rank, village, command, or progression behavior changes.
 
 ---
 
@@ -58,7 +69,7 @@ This mod is optimized for:
 ## 📦 Installation
 
 ### Server Installation
-1. Install Fabric Server for Minecraft 1.21.10.
+1. Install Fabric Server for Minecraft 1.21.11.
 2. Download the latest release.
 3. Place the `.jar` file in the server `mods` folder.
 4. Start the server.
@@ -84,11 +95,23 @@ cd shinobi-alliance-smp-mod
 
 This project uses a local dependency during development:
 
-- `forge-config-api-port-21.10.1+mc1.21.10-fabric.jar`
+- `ForgeConfigAPIPort-v21.11.1-mc1.21.11-Fabric.jar`
 
 For development, place this file inside a `/libs` directory.
 
 The `/libs` folder is intentionally excluded from version control to keep the repository clean and professional.
+
+---
+
+## 🔗 Compatibility
+
+This release targets **Minecraft 1.21.11** and is built for Fabric.
+
+- **Fabric Loader**: 0.17.3 (or compatible newer version)
+- **Fabric API**: 0.141.3+1.21.11
+- **Open Parties and Claims (OPAC)**: fabric-1.21.11-0.25.10
+- **ForgeConfigAPIPort**: v21.11.1 for mc1.21.11 (local `/libs` jar in this project setup)
+- **LuckPerms**: API 5.4 integration support (optional integration)
 
 ---
 

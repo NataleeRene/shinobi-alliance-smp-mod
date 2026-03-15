@@ -10,6 +10,7 @@ import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.permissions.Permissions;
 import net.minecraft.server.level.ServerPlayer;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class ShinobiCommands {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("shinobi")
             .then(Commands.literal("setkage")
-                .requires(source -> source.hasPermission(3))
+                .requires(source -> source.permissions().hasPermission(Permissions.COMMANDS_ADMIN))
                 .then(Commands.argument("player", EntityArgument.player())
                     .then(Commands.argument("village", StringArgumentType.word())
                         .executes(context -> setKage(context))
@@ -29,7 +30,7 @@ public class ShinobiCommands {
                 )
             )
             .then(Commands.literal("unsetkage")
-                .requires(source -> source.hasPermission(3))
+                .requires(source -> source.permissions().hasPermission(Permissions.COMMANDS_ADMIN))
                 .then(Commands.argument("player", EntityArgument.player())
                     .executes(context -> unsetKage(context))
                 )
@@ -242,7 +243,7 @@ public class ShinobiCommands {
             MinecraftServer server = source.getServer();
             
             // Check permission level (3 = admin level)
-            if (!source.hasPermission(3)) {
+            if (!source.permissions().hasPermission(Permissions.COMMANDS_ADMIN)) {
                 source.sendFailure(Component.literal("§cYou don't have permission to reset players! (Requires OP level 3)"));
                 return 0;
             }
@@ -477,7 +478,7 @@ public class ShinobiCommands {
     }
     private static int resyncOther(CommandContext<CommandSourceStack> context) {
         CommandSourceStack src = context.getSource();
-        if (!src.hasPermission(3)) { src.sendFailure(Component.literal("§cRequires OP level 3")); return 0; }
+        if (!src.permissions().hasPermission(Permissions.COMMANDS_ADMIN)) { src.sendFailure(Component.literal("§cRequires OP level 3")); return 0; }
         try { ServerPlayer target = EntityArgument.getPlayer(context, "player"); LuckPermsService.syncPlayerGroups(target, src.getServer()); ShinobiClaimBridge.applyClaimLimits(target); src.sendSuccess(() -> Component.literal("§aResync complete for " + target.getName().getString()), false); return 1; } catch (Exception e) { src.sendFailure(Component.literal("§c" + e.getMessage())); return 0; }
     }
 

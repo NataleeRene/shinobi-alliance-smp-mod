@@ -3,7 +3,7 @@ package com.shinobi.shinobialliancemod.network;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 public record HudUpdatePayload(
     String village,
@@ -14,7 +14,7 @@ public record HudUpdatePayload(
 ) implements CustomPacketPayload {
     
     public static final CustomPacketPayload.Type<HudUpdatePayload> TYPE =
-        new CustomPacketPayload.Type<>(ResourceLocation.parse("shinobialliancemod:hud_update"));
+        new CustomPacketPayload.Type<>(Identifier.parse("shinobialliancemod:hud_update"));
 
     public static final StreamCodec<FriendlyByteBuf, HudUpdatePayload> CODEC = StreamCodec.of(
         (buf, payload) -> {

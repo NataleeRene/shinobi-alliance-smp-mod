@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.12.7'
+	id 'fabric-loom' version '1.13.3'
 	id 'maven-publish'
 }
 
@@ -43,9 +43,9 @@ dependencies {
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modImplementation "maven.modrinth:open-parties-and-claims:fabric-1.21.10-0.25.8"
+	modImplementation "maven.modrinth:open-parties-and-claims:fabric-1.21.11-0.25.10"
 
-	modImplementation files('libs/ForgeConfigAPIPort-v21.10.1+mc1.21.10-Fabric.jar')
+	modImplementation files('libs/ForgeConfigAPIPort-v21.11.1-mc1.21.11-Fabric.jar')
 	
 	// nightconfig dependencies required by ForgeConfigAPIPort
 	modImplementation include('com.electronwill.night-config:core:3.8.0')

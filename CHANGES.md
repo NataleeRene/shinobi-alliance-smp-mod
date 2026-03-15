@@ -1,3 +1,15 @@
+## [1.0.1] - 2026-03-15
+
+- Updated Minecraft compatibility from **1.21.10** to **1.21.11**.
+- Updated dependencies for 1.21.11 support:
+   - Fabric API to **0.141.3+1.21.11**
+   - Open Parties and Claims (OPAC) to **fabric-1.21.11-0.25.10**
+   - ForgeConfigAPIPort local dependency to **v21.11.1-mc1.21.11-Fabric**
+- Applied minimal mapping/API compatibility changes required for 1.21.11 compilation.
+- No gameplay changes (rank logic, village logic, commands, progression, LuckPerms integration, and OPAC behavior remain unchanged).
+
+# Previous Notes
+
 # Changes Made - Village Selection GUI & HUD Fixes
 
 ## Issues Fixed

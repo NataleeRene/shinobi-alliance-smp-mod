@@ -1,7 +1,7 @@
 package com.shinobi.shinobialliancemod;
 
 import net.minecraft.advancements.AdvancementHolder;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -256,7 +256,7 @@ public class AdvancementPointSystem {
         return getPoints(advancement.id());
     }
     
-    public static int getPoints(ResourceLocation advancementId) {
+    public static int getPoints(Identifier advancementId) {
         return ADVANCEMENT_POINTS.getOrDefault(advancementId.toString(), 0);
     }
     
